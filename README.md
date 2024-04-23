@@ -79,12 +79,10 @@ The DiffEdit results will be put into `eval_samples`.
 Evaluation results reported in the paper.
 </font></summary>
 
-<div style="display:inline-block">
 <center>
-<img src="./assets/results/results_cifar10.png" style="zoom: 20%;" />
-<img src="./assets/results/results_text8.png" style="zoom: 20%;" />
+<img src="./assets/results/results_cifar10.png" style="zoom: 17%;" />
+<img src="./assets/results/results_text8.png" style="zoom: 17.4%;" />
 </center>
-</div>
 </details>
 
 
