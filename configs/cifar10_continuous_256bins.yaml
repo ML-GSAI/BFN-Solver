@@ -1,0 +1,44 @@
+data:
+  dataset: "cifar10"
+  horizontal_flip: False
+  num_bins: 256
+  image_size: 32
+  image_channels: 3
+net:
+  name: "UNetVDM"
+  backbone:
+    embedding_dim: 128
+    n_blocks: 32
+    n_attention_heads: 1
+    dropout_prob: 0.1
+    norm_groups: 32
+    input_channels: 3
+    use_fourier_features: True
+    attention_everywhere: False
+    image_size: 32
+  input_adapter:
+    name: "FourierImageInputAdapter"
+    input_channels: 3
+    input_shape: [32, 32]
+    output_height: 3
+    add_pos_feats: False
+    add_mask: False
+  output_adapter:
+    name: "OutputAdapter"
+    input_height: 131
+    output_channels: 3 # (r,g,b)
+    output_height: 1
+bayesian_flow:
+  min_variance: 1e-6
+sampling: 
+  last_drop: True
+  eta: 0.01
+  seed: 1
+  algorithm: "ode_bfnsolver2_multi_step"
+  initial_dist: "zero_mean_and_std"
+  n_steps: 50
+  batch_size: 500
+  n_samples: 100
+  save_path: "samples"
+  mean_std_path: ''
+  fid_stat: "assets/fid_stats/fid_stats_cifar10_train_pytorch.npz"

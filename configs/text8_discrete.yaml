@@ -1,0 +1,39 @@
+meta:
+  neptune:
+  debug: False
+data:
+  dataset: "text8"
+  seq_len: 256
+  vocab_size: 27
+net:
+  name: "GPT"
+  backbone:
+    vocab_size: 27
+    n_layer: 24
+    n_head: 12
+    n_embd: 768
+    dropout: 0.0
+    skip: True
+    bias: True
+  input_adapter:
+    name: "TextInputAdapter"
+    vocab_size: 27
+    seq_len: 256
+    output_size: 768
+    learn_pos_embedding: False
+  output_adapter: null
+bayesian_flow:
+  n_classes: 27
+  max_sqrt_beta: 0.75
+sampling: 
+  last_drop: True
+  cate_samp: False
+  addi_step: False
+  eta: 0.001
+  algorithm: "ode_bfnsolver2_multi_step"
+  initial_dist: "zero_mean_and_std"
+  n_steps: 500
+  batch_size: 1000
+  n_samples: 1000
+  save_path: "samples"
+  mean_std_path: "data/mean_and_std_text8.pt"
