@@ -48,9 +48,12 @@ python bfnsolver_t.py seed=1234 config_file=./configs/text8_discrete.yaml load_m
 
 python bfnsolver_t.py seed=1234 config_file=./configs/text8_discrete.yaml load_model=./assets/text8_ema.pt algorithm=sde_bfnsolver2_multi_step n_steps=10
 ```
+The DiffEdit results will be put into `samples`.
+
+
 
 ## Evaluation
-We provide  commands to reproduce the evaluation results reported in the paper:
+We provide commands to reproduce the evaluation results reported in the paper:
 ```sh
 # cifar10 
 python eval_bfnsolver_i.py seed=1234 config_file=./configs/cifar10_continuous_256bins.yaml load_model=./assets/cifar10_256c_ema.pt algorithm=ode_bfnsolver1 n_steps=10 n_samples=10000
@@ -69,6 +72,20 @@ python eval_bfnsolver_t.py seed=1234 config_file=./configs/text8_discrete.yaml l
 
 python eval_bfnsolver_t.py seed=1234 config_file=./configs/text8_discrete.yaml load_model=./assets/text8_ema.pt algorithm=sde_bfnsolver2_multi_step n_steps=10 n_samples=1000
 ```
+The DiffEdit results will be put into `eval_samples`.
+
+<details open>
+<summary><font size="2">
+Evaluation results reported in the paper.
+</font></summary>
+
+<div style="display:inline-block">
+<center>
+<img src="./assets/results/results_cifar10.png" style="zoom: 20%;" />
+<img src="./assets/results/results_text8.png" style="zoom: 20%;" />
+</center>
+</div>
+</details>
 
 
 ## References
