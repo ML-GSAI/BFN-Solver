@@ -24,7 +24,7 @@ conda env create -f env.yml
 ## Preparation Before Sampling and Evaluation
 
 #### Pretrained Model
-Download pretrained models from [pretrained-BFNs](https://huggingface.co/rupspace/pretrained-BFNs) and put it under `assets/pretrained_models` folder.
+Download pretrained models from [pretrained-BFNs](https://huggingface.co/rupspace/pretrained-BFNs) and put them under `assets/pretrained_models` folder.
 
 #### Reference statistics for FID
 Download reference statistics from this [fid_stats](https://drive.google.com/file/d/13CH7oIB3IbveyuBsAPh8ZpsQ8ZJuFu9f/view?usp=sharing) (which contains reference statistics for FID) and put it under `assets/fid_stats` folder.
@@ -75,6 +75,6 @@ python eval_bfnsolver_t.py seed=1234 config_file=./configs/text8_discrete.yaml l
 
 
 This implementation is based on
-- [bayesian-flow-networks](https://github.com/nnaisense/bayesian-flow-networks) (provide the pretrainedcheckpoints on CIFAR10 and TEXT8)
+- [bayesian-flow-networks](https://github.com/nnaisense/bayesian-flow-networks) (provide the pretrained checkpoints on CIFAR10 and TEXT8)
 - [U-ViT](https://github.com/baofff/U-ViT) (provide the FID reference statistics on CIFAR10)
 - [pytorch-fid](https://github.com/mseitzer/pytorch-fid) (provide the official implementation of FID to PyTorch)
