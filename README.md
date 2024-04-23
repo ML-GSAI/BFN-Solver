@@ -80,8 +80,8 @@ Evaluation results reported in the paper.
 </font></summary>
 
 <center>
-<img src="./assets/results/results_cifar10.png" width="200" />
-<img src="./assets/results/results_text8.png" width="203" />
+<img src="./assets/results/results_cifar10.png" width="300" />
+<img src="./assets/results/results_text8.png" width="303" />
 </center>
 </details>
 
